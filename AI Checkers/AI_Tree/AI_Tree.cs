@@ -8,6 +8,8 @@ namespace AICheckers
 {
     class AI_Tree : IAI
     {
+        int AI_MAXPLYLEVEL = 2;
+
         //Offensive
         int WEIGHT_CAPTUREPIECE = 2;
         int WEIGHT_CAPTUREKING = 1;
@@ -82,7 +84,7 @@ namespace AICheckers
 
         private void CalculateChildMoves(int recursionLevel, Tree<Move> branch, Move move, Square[,] vBoard)
         {
-            if (recursionLevel >= 2)
+            if (recursionLevel >= AI_MAXPLYLEVEL)
             {
                 return;
             }
